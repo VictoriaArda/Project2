@@ -25,6 +25,33 @@
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
+    <!--=======================================================-->
+    <div class="row">    
+      <!--Results search div-->
+      <div class="col-12 jumbotron jumbotron-fluid text-dark d-flex justify-content-left align-items-left">
+        <div class="text-center mt-10">
+          <h1 class="display-4 mb-5">Recipes</h1>
+          <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-0">
+              <!--zip code input id="keyword-search"-->
+              <input type="keyword-search" class="form-control" id="keyword-search" placeholder="Enter your search">
+            </div>
+            <!--button id="submit"-->
+            <button id="submit" type="submit" class="btn btn-primary mb-2">Search</button>
+            <!--button id="clear"-->
+            <button id="clear" type="submit" class="btn btn-primary mb-2 ml-2">Clear</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!--div id="list-results"-->      
+      <div class="col-12 card-deck d-flex justify-content-left align-items-left" id="list-results" style="margin-top:30px">
+      <!--Results listed here dynamically-->
+      </div><!--Results search div end-->
+    </div>
+    <!--=======================================================-->
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
