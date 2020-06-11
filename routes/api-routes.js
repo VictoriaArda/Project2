@@ -50,4 +50,29 @@ module.exports = function(app) {
       });
     }
   });
+
+  // ==================================================================
+  // Favorites api routes
+  // Route to get favorites from members client side based on user_id
+  app.get('/api/favorites', function(req, res) {
+    var query = {};
+    // If user_id is true, add it as a property to new query object
+    if (req.query.user_id) {
+      query.user_id = req.query.user_id;
+    }
+    // Select all where user_id
+    db.Favorites.findAll({
+      where: query,
+      include: [db.User]
+    }).then(function(dbFavorites) {
+      res.json(dbFavorites);
+    });
+  });
+  // Route for posting favorites from members client side to db
+  app.post('/api/favorites', function(req, res) {
+    db.Favorites.create(req.body).then(function(dbFavorites) {
+      res.json(dbFavorites);
+    });
+  });
+  // ==================================================================
 };

@@ -27,5 +27,15 @@ module.exports = function(sequelize, DataTypes) {
   User.addHook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
+
+  //=====================================================
+  //Handles User association to Favorites foreign key constraint
+  // User.associate = function(models) {
+  //   // When a User is deleted, also delete any associated Favorites
+  //   User.hasMany(models.Favorites, {
+  //     onDelete: 'cascade'
+  //   });
+  // };
+  //======================================================
   return User;
 };
