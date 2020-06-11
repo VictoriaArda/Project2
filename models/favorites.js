@@ -15,7 +15,28 @@ module.exports = function(sequelize, DataTypes) {
     url: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
     }
   });
+  //===================================================
+  // Handles foreign key constraint
+  Favorites.associate = function(models) {
+    // A favorite can't be created without a User due to the foreign key constraint
+    Favorites.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  //====================================================
   return Favorites;
 };
