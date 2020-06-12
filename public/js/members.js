@@ -61,6 +61,8 @@ $(document).ready(function() {
    });
  
    function createCardList(cardList){
+      // Unique identifier for each icon
+      var iconId = 0;     
  
      for (var i = 0; i < cardList.length; i++) {    
                
@@ -85,12 +87,9 @@ $(document).ready(function() {
        //console.log(ingredientList);
        
        var htmlContent = $("<div>").html(`<img src="${recipe.image}" alt="meal"><h3>${recipe.title}</h3><ul><p>Ingredients: </p>${ingredientList}</ul><p><a href="${recipe.link}">View more</a></p><p style="display:inline"><em>Source: </em>${recipe.source}</p><a href="#">
-       <input type="image" src="../public/assets/img/favicon.png" alt="icon image submit" style="float: right" id="fav-icon"/>
+       <input type="image" src="../public/assets/images/favicon.png" alt="icon image" data-id="${iconId++}" style="float: right" class="fav-icon"/>
        </a>`);
-       console.log(htmlContent);
-       
-       htmlContent.attr("id", `${recipe.link}`);
-       console.log(htmlContent);
+       //console.log(htmlContent);
        htmlContent.addClass("text-left")
        // append html to inner card div 
        cardBodyDiv.append(htmlContent);
@@ -110,4 +109,31 @@ $(document).ready(function() {
    });
    //console.log(results);
     //=================================================================
+     // Upon clicking an icon, send POST request to server with it's data
+  $(".fav-icon").on("click", function() {
+    // Store unique id of favorite icon
+    var thisId = $(this).data("id");
+    // console.log(thisId);
+    // Object recipe stored
+    var thisRecipe = ((JSON.parse(results)[thisId]).recipe); 
+    console.log(thisRecipe.image);
+    console.log(thisRecipe.label);
+    console.log(thisRecipe.url);
+    // Create favorite object to send to server
+    var favorite = {
+      image: thisRecipe.image,
+      title: thisRecipe.label,
+      url: thisRecipe.url 
+    };
+    // Send the POST request to server with favorite data
+    $.ajax("/api/favorites", {
+      type: "POST",
+      data: favorite
+    }).then(
+      function() {
+        console.log("Success in creating a new post");
+      }
+    );
+  }); 
+  //==================================================================== 
 });
