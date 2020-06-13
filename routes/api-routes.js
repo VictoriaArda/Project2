@@ -54,18 +54,17 @@ module.exports = function(app) {
   // ==================================================================
   // Favorites api routes
   // Route to get favorites from members client side based on user_id
-  app.get('/api/favorites', function(req, res) {
-    var query = {};
-    // If UserId is true, add it as a property to new query object
-    if (req.query.UserId) {
-      query.UserId = req.query.UserId;
-    }
-    // Select all where user_id
+  app.get('/api/favorites/:id', function(req, res) {
+
     db.Favorite.findAll({
-      where: query,
+      where: {
+        UserId: req.params.id
+      },
       include: [db.User]
     }).then(function(dbFavorites) {
       res.json(dbFavorites);
+      //.status(200);
+
     });
   });
   // Route for posting favorites from members client side to db
