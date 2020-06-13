@@ -29,13 +29,13 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   //=====================================================
-  //Handles User association to Favorites foreign key constraint
-  // User.associate = function(models) {
-  //   // When a User is deleted, also delete any associated Favorites
-  //   User.hasMany(models.Favorites, {
-  //     onDelete: 'cascade'
-  //   });
-  // };
+  // Handles User association to Favorites foreign key constraint
+  User.associate = function(models) {
+    // When a User is deleted, also delete any associated Favorites
+    User.hasMany(models.Favorite, {
+      onDelete: 'cascade'
+    });
+  };
   //======================================================
   return User;
 };

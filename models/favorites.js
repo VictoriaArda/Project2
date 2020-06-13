@@ -1,6 +1,6 @@
 // Creating our Favorites model
 module.exports = function(sequelize, DataTypes) {
-  var Favorites = sequelize.define('Favorite', {
+  var Favorite = sequelize.define('Favorite', {
     // The favs title cannot be null
     title: {
       type: DataTypes.STRING,
@@ -29,14 +29,14 @@ module.exports = function(sequelize, DataTypes) {
   });
   //===================================================
   // Handles foreign key constraint
-  Favorites.associate = function(models) {
+  Favorite.associate = function(models) {
     // A favorite can't be created without a User due to the foreign key constraint
-    Favorites.belongsTo(models.User, {
+    Favorite.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
     });
   };
   //====================================================
-  return Favorites;
+  return Favorite;
 };
