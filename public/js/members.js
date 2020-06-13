@@ -87,7 +87,7 @@ $(document).ready(function() {
        //console.log(ingredientList);
        
        var htmlContent = $("<div>").html(`<img src="${recipe.image}" alt="meal"><h3>${recipe.title}</h3><ul><p>Ingredients: </p>${ingredientList}</ul><p><a href="${recipe.link}">View more</a></p><p style="display:inline"><em>Source: </em>${recipe.source}</p><a href="#">
-       <input type="image" src="../public/assets/images/favicon.png" alt="icon image" data-id="${iconId++}" style="float: right" class="fav-icon"/>
+       <input type="image" src="../assets/img/favicon.png" alt="icon image" data-id="${iconId++}" style="float: right" class="fav-icon"/>
        </a>`);
        //console.log(htmlContent);
        htmlContent.addClass("text-left")
@@ -98,7 +98,9 @@ $(document).ready(function() {
  
        $("#list-results").append(recipeDiv); 
        
-     } 
+     }
+     
+     postFavorite(cardList);
  
    }
    
@@ -109,31 +111,31 @@ $(document).ready(function() {
    });
    //console.log(results);
     //=================================================================
-     // Upon clicking an icon, send POST request to server with it's data
-  $(".fav-icon").on("click", function() {
-    // Store unique id of favorite icon
-    var thisId = $(this).data("id");
-    // console.log(thisId);
-    // Object recipe stored
-    var thisRecipe = ((JSON.parse(results)[thisId]).recipe); 
-    console.log(thisRecipe.image);
-    console.log(thisRecipe.label);
-    console.log(thisRecipe.url);
-    // Create favorite object to send to server
-    var favorite = {
-      image: thisRecipe.image,
-      title: thisRecipe.label,
-      url: thisRecipe.url 
-    };
-    // Send the POST request to server with favorite data
-    $.ajax("/api/favorites", {
-      type: "POST",
-      data: favorite
-    }).then(
-      function() {
-        console.log("Success in creating a new post");
-      }
-    );
-  }); 
+     function postFavorite(result){
+      // Upon clicking an icon, send POST request to server with it's data
+      $(".fav-icon").on("click", function() {
+        // Store unique id of favorite icon
+        var thisId = $(this).data("id");
+        // console.log(thisId);
+        // Object recipe stored
+        var thisRecipe = (result[thisId].recipe); //CHANGE-PASSED PARAMETER FROM CREATE CARD LIST FUNCTION
+        console.log(thisRecipe.image);
+        console.log(thisRecipe.label);
+        console.log(thisRecipe.url); 
+  
+        $.get("/api/user_data").then(function(data) {
+        // Create favorite object to send to server
+          var favorite = {
+            image: thisRecipe.image,
+            title: thisRecipe.label,
+            url: thisRecipe.url,
+            UserId: data.id 
+          };    
+          $.post("/api/favorites", favorite, function() {
+  
+          });        
+        });    
+      });
+    } 
   //==================================================================== 
 });
