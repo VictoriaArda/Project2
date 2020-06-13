@@ -2,3 +2,95 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+body, html {
+  height: 100%;
+  font-family: 'Smythe', cursive; 
+  }
+
+body{
+background-image:url(../assets/img/pic34.jpg');
+height: 50%;
+background-position:initial;
+background-repeat: no-repeat;
+background-size:cover;
+padding: 20px;
+
+}
+
+
+.topnav {
+  height: 50px;
+overflow: hidden;
+background-color:transparent;
+margin: 20px;
+
+}
+
+.topnav a {
+float:right;
+color:white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 20px;
+width: 15%;
+}
+
+.topnav a:hover {
+background-color:rgb(184, 153, 153);
+color: white;
+}
+
+.topnav a.active {
+background-color: rgb(184, 153, 153);
+color:rgb(24, 27, 27);
+float:left;
+font-size: 20px;
+font-weight: bold; 
+}
+
+
+
+
+/*Login styles*/
+
+#login {
+  background-image:url(../assets/img/93324.jpg);
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 20px;
+
+}
+
+/*singin styles*/
+
+#signup {
+  background-image:url(../assets/img/93324.jpg);
+  background-position:initial;
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 20px;
+
+}
+
+
+/*members styles*/
+
+#members {
+  background-image:url(../assets/img/pic34.jpg);
+  background-position:initial;
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 20px;
+
+}
+
+
+h2 {
+  font-size: 20px;
+  color: white;
+}
+
+
+
