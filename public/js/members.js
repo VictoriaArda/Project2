@@ -86,7 +86,7 @@ $(document).ready(function() {
             });
             //console.log(ingredientList);
 
-            var htmlContent = $("<div>").html(`<img src="${recipe.image}" alt="meal"><h3>${recipe.title}</h3><ul><p>Ingredients: </p>${ingredientList}</ul><p><a href="${recipe.link}">View more</a></p><p style="display:inline"><em>Source: </em>${recipe.source}</p><a href="#">
+            var htmlContent = $("<div>").html(`<img src="${recipe.image}" class="card-img-top img-fluid" alt="meal"><h3>${recipe.title}</h3><ul><p>Ingredients: </p>${ingredientList}</ul><p><a href="${recipe.link}">View more</a></p><p style="display:inline"><em>Source: </em>${recipe.source}</p><a href="#">
        <input type="image" src="../assets/img/favicon.png" alt="icon image" data-id="${iconId++}" style="float: right" class="fav-icon"/>
        </a>`);
             //console.log(htmlContent);
