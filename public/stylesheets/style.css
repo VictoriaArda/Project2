@@ -7,6 +7,7 @@
     html {
         height: 100%;
         font-family: 'Smythe', cursive;
+        font-size: 20px;
     }
     
     body {
@@ -16,6 +17,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         padding: 20px;
+        font-family: 'Smythe', cursive;
     }
     
     .topnav {
@@ -68,7 +70,7 @@
     /*members styles*/
     
     #members {
-        background-color: #537479;
+        background-color:#537479;
         background-position: initial;
         background-repeat: no-repeat;
         background-size: cover;
@@ -76,16 +78,17 @@
     }
     
     #favorites {
-        background-color: #537479;
+        background-color:#537479;
         background-position: initial;
         background-repeat: no-repeat;
         background-size: cover;
         padding: 20px;
     }
     
-    h2 {
-        font-size: 20px;
+    h1, h2 {
+        font-size: 50px;
         color: white;
+        text-align: center;
     }
     
     .jumbotron {
@@ -105,3 +108,21 @@
         color: #774836;
         height: 50px;
     }
+
+    .col-sm-3 {
+        width: 100%;
+        height: 45vw;
+        object-fit: cover;
+      }
+      p {
+       color: white;
+       
+      }
+      label {
+        color: white;
+        
+      }
+      a {
+        color: wheat;
+
+      }
