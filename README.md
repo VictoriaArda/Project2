@@ -15,8 +15,6 @@ Victoria Arda
 
 Vlada Antonchenko
 
-Chris Rugg
-
 ## Technologies
 
 The technologies used within this project were:

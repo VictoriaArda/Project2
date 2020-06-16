@@ -67,8 +67,8 @@ $(document).ready(function() {
         for (var i = 0; i < cardList.length; i++) {
 
             // create div elements; add classes for styling
-            var recipeDiv = $("<div>").addClass("col card jumbotron");
-            recipeDiv.attr("style", "width:400px;padding:auto");
+            var recipeDiv = $("<div>").addClass("col-sm-3 row card jumbotron");
+            recipeDiv.attr("style", "width:400px;height:1100px;padding:auto");
             var cardBodyDiv = $("<div>").addClass("card-body");
 
             var recipe = {

@@ -57,8 +57,8 @@ $(document).ready(function() {
    for (var i = 0; i < cardList.length; i++) {    
              
      // create div elements; add classes for styling
-     var recipeDiv = $("<div>").addClass("col card jumbotron");
-     recipeDiv.attr("style", "width:400px;padding:auto");        
+     var recipeDiv = $("<div>").addClass("col-sm-3 card jumbotron");
+     recipeDiv.attr("style", "width:350px;height:550px;padding:auto");        
      var cardBodyDiv = $("<div>").addClass("card-body");      
      
      var favs = {
@@ -67,7 +67,7 @@ $(document).ready(function() {
         url: favorites[i].url
      };
      //console.log(favs);
-     var htmlContent = $("<div>").html(`<img src="${favs.image}" alt="meal"><h3>${favs.title}</h3><p><a href="${favs.url}">View more</a></p><input type="button" data-id="${deleteId++}" value="Delete" class="del-button"></input>`);
+     var htmlContent = $("<div>").html(`<img src="${favs.image}" class="card-img-top img-fluid" alt="meal"><h3>${favs.title}</h3><p><a href="${favs.url}">View more</a></p><input type="button" data-id="${deleteId++}" value="Delete" class="del-button"></input>`);
      //console.log(htmlContent);
      htmlContent.addClass("text-left");
      // append html to inner card div 
