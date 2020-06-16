@@ -67,7 +67,7 @@ $(document).ready(function() {
         url: favorites[i].url
      };
      //console.log(favs);
-     var htmlContent = $("<div>").html(`<img src="${favs.image}" class="card-img-top img-fluid" alt="meal"><h3>${favs.title}</h3><p><a href="${favs.url}">View more</a></p><input type="button" data-id="${deleteId++}" value="Delete" class="del-button"></input>`);
+     var htmlContent = $("<div>").html(`<img src="${favs.image}" class="card-img-top img-fluid" alt="meal"><h3>${favs.title}</h3><p><a style="color:blue" href="${favs.url}">View more</a></p><input type="button" data-id="${deleteId++}" value="Delete" class="del-button"></input>`);
      //console.log(htmlContent);
      htmlContent.addClass("text-left");
      // append html to inner card div 
