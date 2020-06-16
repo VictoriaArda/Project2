@@ -34,11 +34,11 @@ $(document).ready(function() {
                 //console.log(response);
                 // response object saved to results array
                 var results = response.hits;
-                console.log(results);
+                //console.log(results);
                 // if no result found in api write message
                 if (results.length == 0) {
                     $("#list-results").empty();
-                    var recipeDiv = $("<div>").addClass("card");
+                    var recipeDiv = $("<div>").addClass("card col-sm-3 jumbotron");
                     var cardBodyDiv = $("<div>").addClass("card-body text-center");
                     var heading = $("<h3>").text("No results found. Try another search.");
                     cardBodyDiv.append(heading);
@@ -118,10 +118,10 @@ $(document).ready(function() {
             var thisId = $(this).data("id");
             // console.log(thisId);
             // Object recipe stored
-            var thisRecipe = (result[thisId].recipe); //CHANGE-PASSED PARAMETER FROM CREATE CARD LIST FUNCTION
-            console.log(thisRecipe.image);
-            console.log(thisRecipe.label);
-            console.log(thisRecipe.url);
+            var thisRecipe = (result[thisId].recipe);
+            // console.log(thisRecipe.image);
+            // console.log(thisRecipe.label);
+            // console.log(thisRecipe.url);
 
             $.get("/api/user_data").then(function(data) {
                 // Create favorite object to send to server
