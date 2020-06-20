@@ -4,7 +4,7 @@ This application is aimed at people wanting to search for recipe, and build pers
 ## Demo App
 The end product of this group project is deployed to Heroku at the link below. Please check it out and enjoy!
 
-https://project-2-2020.herokuapp.com/
+https://project-2-vnv.herokuapp.com/
 
 ## Contributors
 This project was completed as a collaboration between:
