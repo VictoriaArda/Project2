@@ -4,7 +4,7 @@
         "password": "rootpass",
         "database": "loginDB",
         "host": "127.0.0.1",
-
+        "port": "3308",
         "dialect": "mysql"
     },
     "test": {
@@ -12,7 +12,7 @@
         "password": "rootpass",
         "database": "database_test",
         "host": "127.0.0.1",
-
+        "port": "3308",
         "dialect": "mysql"
     },
     "production": {
@@ -20,7 +20,7 @@
         "password": "rootpass",
         "database": "database_production",
         "host": "127.0.0.1",
-
+        "port": "3308",
         "dialect": "mysql"
     }
 }
